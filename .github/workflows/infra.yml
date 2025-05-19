@@ -1,4 +1,4 @@
-name: 'Deploy App'
+name: 'Deploy infra'
 
 on:
   push:
@@ -46,6 +46,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
 
       - name: Build an image from Dockerfile
         env:
