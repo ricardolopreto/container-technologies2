@@ -120,8 +120,8 @@ jobs:
         run: |
             echo "terraform {
               backend \"s3\" {
-                bucket   = \"${{ secrets.AWS_ACCOUNT_ID }}-tfstate\"
-                key      = \"app-${{ env.ENVIRONMENT }}.tfstate\"
+                bucket   = \"${{ secrets.AWS_ACCOUNT_ID }}-tfstate1\"
+                key      = \"app-${{ env.ENVIRONMENT }}.tfstate1\"
                 region   = \"${{ vars.AWS_REGION }}\"
               }
             }" >> provider.tf
