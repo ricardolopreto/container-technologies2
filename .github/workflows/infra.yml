@@ -47,6 +47,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+
       - name: Build an image from Dockerfile
         env:
           DOCKER_BUILDKIT: 1
@@ -120,8 +121,8 @@ jobs:
         run: |
             echo "terraform {
               backend \"s3\" {
-                bucket   = \"${{ secrets.AWS_ACCOUNT_ID }}-tfstate1\"
-                key      = \"app-${{ env.ENVIRONMENT }}.tfstate1\"
+                bucket   = \"${{ secrets.AWS_ACCOUNT_ID }}-tfstate\"
+                key      = \"app-${{ env.ENVIRONMENT }}.tfstate\"
                 region   = \"${{ vars.AWS_REGION }}\"
               }
             }" >> provider.tf
